@@ -4,9 +4,12 @@ const motoManiacs = {
 	canvasSize: {
 		width: undefined,
 		height: undefined},
+	game: undefined,
 	backgroundImage: undefined,
 	newMoto: undefined,
 	music: undefined,
+	elapsedTime: undefined,
+	score: 0,
 
 	init (elementCanvas) {
 		//indicar parametros al canvas (2d, dimensiones)
@@ -21,12 +24,19 @@ const motoManiacs = {
 		this.music.play ();
 
 		//Crear la moto
-		this.moto = new Moto (this.ctx, 180, 180);
+		this.moto = new Moto (this.ctx, 70, 80);
+
+		//arrancar listeners
+		this.setListeners ();
+
+
 
 
 
 		this.refreshScreen();
 	},
+
+	//Funciones del setting inicial: Contexto, dimensiones del canvas, background, musica, listeners
 
 	setMusic () {
 		this.music = new Audio;
@@ -46,17 +56,63 @@ const motoManiacs = {
 
 	setBackground () {
 		this.backgroundImage = new Image();
-		this.backgroundImage.src = "/images/background 3.png";
+		this.backgroundImage.src = "/images/backgrounds/background 3.png";
 	}, 
+
+	setListeners() {
+		document.addEventListener('keydown', e => {
+			switch (e.keyCode) {
+			  case 39:
+				this.moto.rotateRight ();;
+			  break;
+			  case 37: 
+				this.moto.rotateLeft ();
+			  break;
+			  case 65://"A"
+				this.moto.accelerate ();
+			  break;
+			  case 68://"D"
+				this.moto.turbo ();
+			  break;
+			}
+		  }); 
+	},
+
+	//Funciones de pintura
+
+	clearCanvas() {
+		this.ctx.clearRect(0, 0, this.canvasSize.w, this.canvasSize.h);
+	},
+
+	drawBackground() {
+		this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvasSize.width, this.canvasSize.height);
+	},
+
+	drawScores() {
+		this.ctx.font = '25px Verdana';
+		this.ctx.fillStyle = 'black';
+		this.ctx.fillText('Score: ' + this.score, 550, 50);
+	  },
 
 	drawAll (){
-		this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvasSize.width, this.canvasSize.height);
+		this.drawBackground ();
 		this.moto.draw();
+		this.drawScores ();
 	}, 
 
+	//Funcion de accion
+
 	refreshScreen (){
+		//this.checkIfColision ();
+		this.clearCanvas ();
 		this.drawAll();
-		let game = requestAnimationFrame (() => {this.refreshScreen();});
+		this.game = requestAnimationFrame (() => {this.refreshScreen();});
+	},
+
+	//Aux functions
+
+	random (max) {
+		return Math.floor(Math.random() * max);
 	}
 
 }
