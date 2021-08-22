@@ -1,0 +1,153 @@
+@font-face {
+    font-family:"TitleFont";
+    src: url("./fonts/TitleFont.otf");
+}
+
+body {
+    padding: 0;
+    text-align: center;
+    background-image: url(/images/backgroundTest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:"TitleFont";
+    max-width: 100vw;
+/*     max-height: 100vh;
+ */    margin: 0;
+    
+    
+  }
+
+  .customBtn{
+    margin: 10px auto;
+    width: 250px;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    font-family: "TitleFont";
+    color: #ffc000;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 10px 0;
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 4px ridge #ffb000;
+    border-left: 4px groove #ffb000;
+    border-right: 4px ridge #ffb000;
+    border-bottom: 4px groove #ffb000;
+    box-shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);
+  }
+  
+  .customBtn:hover{
+    background: radial-gradient(circle, #e52b2b, #8b0000);
+    box-shadow: 0px 0 5px 5px rgba(255,255,255,0.2)
+  }
+  
+  .customBtn:active{
+    background: radial-gradient(circle, #ec6a6a, #e52b2b);
+    box-shadow: 0px 0 5px 5px rgba(255,255,255,0.2)
+  }
+  .noHover{
+    pointer-events: none;
+}
+.contenedor{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+align-self: center;
+max-width: 100%;
+max-height: 100%;
+
+}
+
+.titulo h1{
+    color: #ffb000;
+    font-size: 7rem;
+    margin-bottom: initial;
+    margin-top: auto;
+}
+.intro{
+    color: #ffb000;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.juego{
+background-image: url(./images/game_background_2.png);
+background-repeat: no-repeat;
+background-size: cover;
+margin-bottom: 1rem;
+border: solid 1rem #ffb000;
+border-radius: 1rem;
+height: 532px;
+}
+.botones{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+width:150px 
+}
+.secondaryBtn{
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.secondaryBtn img{
+    width: 3rem
+}
+.startBtn{
+    width: 15rem;
+    height: 4rem;
+    font-family: "TitleFont";
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.githubBtn img{
+    width: 3rem
+}
+.githubBtn{
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instrucciones{
+    background-color: darkolivegreen;
+    color: #ffb000;
+    font-size: 2rem;
+}
+.instrucciones p{
+    margin:1rem;
+}
+#footer{
+    color: #ffb000;
+    padding-bottom: 0.3rem;
+}
+h5{
+    font-size: 2rem;
+}
+.modal-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: darkolivegreen;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+.botones-lat{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

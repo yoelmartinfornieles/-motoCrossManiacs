@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" href="">
+    <title>MotoCrossManiacs</title>
+</head>
+<body>
+<div>
+<div class="contenedor">
+    <div class="titulo"><h1>Project MotoCross Maniacs</h1></div>
+    <div class="intro">
+		Motocross Maniacs Port
+    </div> 
+    <div class="botones-lat">
+      <div class="botones">
+
+      </div>
+      <div class="juego"><canvas id="canvas" width="700" height="500"></canvas></div>
+     <div class="botones">
+        <button id="mute" class="secondaryBtn customBtn"><img src="./images/muteIcon.png" alt="Mute Icon"></button> 
+        <button class="secondaryBtn customBtn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img src="./images/instructionsIcon.png" alt="Instructions Icon"></button>
+        <button class="secondaryBtn customBtn" onclick="window.open('http://github.com/yoelmartinfornieles')"><img src="./images/githubIcon.png" alt="Github Icon"></button>
+    </div>
+    </div>
+    <button id="start" class="startBtn customBtn">START</button>
+       
+    <div class="modal-dialog modal-dialog-centered instrucciones" style="background-color: darkolivegreen">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Instrucciones</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>Utiliza las teclas<br>Utiliza la tecla "P" para conjurar proyectiles magicos.</p>
+                <p>Rollo geimboi!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary customBtn" data-bs-dismiss="modal">Olrait!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+    </div>
+    <div id="footer">Made by Yoel Martin 2021</div>
+</div>
+
+    
+</div>
+<input type="button" id="comenzar" value="Comenzar" onClick="comenzar()">
+<input type="button" id="detener" value="Detener" onClick="detener()">
+<script src="./js/powerUps.js"></script>    
+<script src="./js/obstacles.js"></script>    
+<script src="./js/moto.js"></script>  
+<script src="./js/motocrossManiacsApp.js"></script>    
+<script src="./js/main.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</body>
+</html>
